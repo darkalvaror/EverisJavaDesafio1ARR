@@ -1,79 +1,89 @@
 package variables;
 
+/**
+ * Desafio Everis
+ * 
+ * @author alvaro
+ *
+ */
 public class Developer {
-	
-	//Atributos necesarios
-	private String nombre;
-	private int diasVacaciones = 21;
-	private static byte numEmpleados = 0;
-	private static final String EMPRESA = "EVERIS";
-	private byte IdEmpleado;
-	private static final short NUMMAXEMPLEADOS = 127;
-	
-	//Método constructor para crear a desarrolladores
-	public Developer(String nombre) {
-		numEmpleados++;
-		this.nombre = nombre;
-		IdEmpleado = numEmpleados;
+
+	/** Methods */
+	private String name;
+	private int vactionsDays = 21;
+	private static byte employeeNum = 0;
+	private static final String BUSINESS = "EVERIS";
+	private byte employeeID;
+	private static final short EMPLOYEEMAXNUM = 127;
+
+	/** Attribute for developers */
+	public Developer(String name) {
+
+		employeeNum++;
+		this.name = name;
+		employeeID = employeeNum;
 	}
-	
-	//Getters and setters
-	//Obtener el nombre de un empleado
-	public String getNombre() {
-		return nombre;
+
+	/**
+	 *  Getters and setters
+	 * 
+	 * Get the name
+	*/
+	public String getName() {
+		return name;
 	}
-	
-	//Establecer el nombre de un empleado
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+
+	/** Set the name */
+	public void setName(String name) {
+		this.name = name;
 	}
-	
-	//Obtener los dias de vacaciones de un empleado
-	public int getDiasVacaciones() {
-		return diasVacaciones;
+
+	/** Get the vacations */
+	public int getVacationsDays() {
+		return vactionsDays;
 	}
-	
-	//Obtener el ID de un empleado
-	public byte getIdEmpleado() {
-		return IdEmpleado;
+
+	/** Get the employee ID */
+	public byte getEmployeeID() {
+		return employeeID;
 	}
-	
-	//Establecer el ID de un empleado
-	public void setIdEmpleado(byte idEmpleado) {
-		IdEmpleado = idEmpleado;
+
+	/** Set the employee ID */
+	public void setEmployeeID(byte idEmpleado) {
+		employeeID = idEmpleado;
 	}
-	
-	//Obtener el nombre de la empresa
-	public static String getEmpresa() {
-		return EMPRESA;
+
+	/** Get the name of the business */
+	public static String getBusiness() {
+		return BUSINESS;
 	}
-	
-	//Obtener el número máximos que puede haber en la empresa
-	public static short getNummaxempleados() {
-		return NUMMAXEMPLEADOS;
+
+	/** Get the limit of employee in the business */
+	public static short getEmployeeMaxNum() {
+		return EMPLOYEEMAXNUM;
 	}
-	
-	//Establecer dias de vacaciones 
-	public void setDiasVacaciones(int diasVacaciones) {
-		this.diasVacaciones = diasVacaciones;
+
+	/** Set the vacations days for an employee */
+	public void setVacationsDays(int diasVacaciones) {
+		this.vactionsDays = diasVacaciones;
 	}
-	
-	//Métodos
-	//Método para restar días a un desarrollador
-	public String restarDias(int dias) {
+
+	/** Establish the new days of vacations */
+	public String newDaysOfVacations(int dias) {
 		int resultado = 0;
-		if (this.getDiasVacaciones() >= dias && dias > 0) {
-		 resultado = this.getDiasVacaciones() - dias;
-		 this.setDiasVacaciones(resultado);
+		if (this.getVacationsDays() >= dias && dias > 0) {
+			resultado = this.getVacationsDays() - dias;
+			this.setVacationsDays(resultado);
 		}
-		return "Le ha restado a " + this.getNombre() + " " + dias + " dias, y ahora tiene un total de " + resultado + " dias.";
+		return this.getName() + " now has " + resultado
+				+ " days of vacations";
 	}
-	
-	//Generación de un toString() para mostrarlo en la main
+
+	/** Generation of "toString()" to show the results */
 	@Override
 	public String toString() {
-		return "Developer [Nombre=" + nombre + ", Numero de empleados totales=" + numEmpleados + ", ID de empleado=" + IdEmpleado + 
-				", Dias de vacaciones disponibles=" + diasVacaciones + "]";
+		return "Developer [Name=" + name + ", Total employees=" + employeeNum + ", Employee ID="
+				+ employeeID + ", Days of vacations=" + vactionsDays + "]";
 	}
 
 }

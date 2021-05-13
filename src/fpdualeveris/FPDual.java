@@ -8,34 +8,35 @@ public class FPDual {
 		// TODO Auto-generated method stub
 		variablesChallenge();
 	}
+	/** Creation of method "variablesChallenge()" */
 	private static void variablesChallenge() {
-		if (Developer.getNummaxempleados() <= 127) {
+		if (Developer.getEmployeeMaxNum() <= 127) {
 		
-		//Creación de 4 nuevos empleados
+		/** Creation of 4 new developers */
 		Developer developer1 = new Developer("Fernando");
 		Developer developer2 = new Developer("Antonio");
 		Developer developer3 = new Developer("Manuel");
 		Developer developer4 = new Developer("Alejandro");
 		
-		//Mostrar total empleados en la empresa
+		/** Show all the information about an employee */
 		System.out.println(developer1.toString());
 		System.out.println(developer4.toString());
 		
-		//Restar dias al segundo desarrollador
-		System.out.println(developer2.restarDias(2));
+		/** Show the new days of vacations */
+		System.out.println(developer2.newDaysOfVacations(2));
 		
-		//Mostrar los dias de vacaciones de un desarrollador
-		System.out.println("El total de dias del empleado " + developer3.getNombre() + " es: " + developer3.getDiasVacaciones());
+		/** Show all the days of vacations */
+		System.out.println("The days of vacations of " + developer3.getName() + " is: " + developer3.getVacationsDays());
 		
-		//Mostrar ID de un empleado
-		System.out.println("El ID del empleado " + developer2.getNombre() + " es: " + developer2.getIdEmpleado());
+		/** Show the ID */
+		System.out.println("The ID of " + developer2.getName() + " is: " + developer2.getEmployeeID());
 		
-		//Mostrar nombre de la empresa
-		System.out.println(Developer.getEmpresa());
+		/** Show the name of the business */
+		System.out.println(Developer.getBusiness());
 		
-		//Si hay más de 127 empleados mostrará este error
+		/** If there are more than 127 employee, show this error */
 		} else {
-			System.out.println("Hay más de 127 empleados");
+			System.out.println("There are more than 127 employee");
 		}
 		
 	}
